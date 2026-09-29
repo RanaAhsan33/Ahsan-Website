@@ -34,7 +34,7 @@ const fade = { hidden:{ opacity:0, y:28 }, visible:{ opacity:1, y:0, transition:
 const skillGroups = {
   "Cybersecurity": ["CEH", "CHFI", "OWASP Top 10", "SIEM", "Wazuh", "Wireshark", "Kali Linux", "Vulnerability Assessment", "Threat Analysis", "Incident Response"],
   "Project Management": ["Project Initiation", "Project Planning", "Execution", "Agile", "Risk Management", "Stakeholder Communication", "Team Coordination", "Delivery Oversight"],
-  "Technical": ["Active Directory", "Network Security", "Linux", "Unreal Engine", "Unity", "Blender", "After Effects", "Figma"],
+  "Technical": ["Active Directory", "Network Security", "CSI Linux", "IDS & IPS", "Nessus Scan", "Application Security", "Penetration Testing", "Purple Teaming", "Digital Forensics", "Security Documentation"],
 };
 
 const experience = [
