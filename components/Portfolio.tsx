@@ -39,13 +39,13 @@ const skillGroups = {
 
 const experience = [
   {
-    company:"Pheonux.Design", role:"Project Manager & Cyber Security Analyst", dates:"Aug 2026 — Present",
+    company:"Pheonux.Design", role:"Cyber Security Analyst", dates:"Aug 2026 — Present",
     text:"Coordinating project delivery while supporting cybersecurity analysis, security monitoring, incident-oriented workflows and technical communication across teams.",
     tags:["Project Management","Cybersecurity","Stakeholders","Security Operations"]
   },
   {
     company:"Big Immersive", role:"Project Coordination & Technical Production", dates:"Jun 2021 — Aug 2026",
-    text:"Worked across multidisciplinary production teams, coordinating schedules, deliverables, approvals and quality while supporting complex technical pipelines and client-facing execution.",
+    text:"Worked across multidisciplinary production teams, coordinating schedules, deliverables, approvals and quality while supporting complex technical pipelines and client facing execution.",
     tags:["Coordination","Delivery","Team Leadership","Quality"]
   },
   {
