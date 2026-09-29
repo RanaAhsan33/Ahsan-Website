@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #090911;
+  --panel: rgba(18, 18, 32, 0.58);
+  --panel-strong: rgba(22, 22, 38, 0.82);
+  --text: #f7f7fb;
+  --muted: #a4a5b4;
+  --purple: #a78bfa;
+  --purple-2: #8b5cf6;
+  --purple-3: #c4b5fd;
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(70, 56, 150, .2), transparent 28%),
+    radial-gradient(circle at 80% 35%, rgba(99, 62, 174, .16), transparent 30%),
+    linear-gradient(180deg, #07070d 0%, #0a0a12 45%, #0c0c16 100%);
+  color: var(--text);
+  font-family: var(--font-space), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+body::selection { background: rgba(167,139,250,.35); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+
+.cosmic-noise {
+  position: fixed; inset: 0; pointer-events: none; z-index: -3; opacity: .28;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 12%, rgba(255,255,255,.6) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 30% 75%, rgba(167,139,250,.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 85% 82%, rgba(255,255,255,.5) 0 1px, transparent 1.5px);
+  background-size: 220px 220px, 310px 310px, 260px 260px, 360px 360px;
+  animation: starDrift 42s linear infinite;
+}
+
+.nebula {
+  position: fixed; width: 48vw; height: 48vw; border-radius: 50%; filter: blur(90px); pointer-events:none; z-index:-4;
+  opacity:.16; animation: nebulaFloat 20s ease-in-out infinite alternate;
+}
+.nebula.one { left:-16vw; top:10vh; background:#7c3aed; }
+.nebula.two { right:-18vw; top:55vh; background:#4338ca; animation-delay:-8s; }
+
+@keyframes starDrift { to { background-position: 220px 120px, -150px 210px, 120px -180px, -240px 120px; } }
+@keyframes nebulaFloat { from { transform:translate3d(0,0,0) scale(1); } to { transform:translate3d(6vw,-4vh,0) scale(1.14); } }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes pulseGlow { 50% { box-shadow: 0 0 70px rgba(139,92,246,.28); } }
+@keyframes floatPlanet { 50% { transform: translateY(-12px); } }
+
+.container-shell { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+.section { min-height:100vh; display:flex; align-items:center; padding:120px 0 90px; position:relative; }
+.section-label { color:var(--purple-3); font-size:.76rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; }
+.section-title { font-family:var(--font-syne),sans-serif; font-size:clamp(2.4rem, 5vw, 5.4rem); line-height:.98; letter-spacing:-.04em; margin:.7rem 0 1.4rem; }
+.section-copy { color:var(--muted); font-size:1.04rem; line-height:1.8; max-width:720px; }
+
+.glass { background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.026)); border:1px solid var(--border); backdrop-filter: blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 16px 50px rgba(0,0,0,.18); }
+.glow-hover { transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+.glow-hover:hover { transform:translateY(-6px); border-color:rgba(167,139,250,.34); box-shadow:0 22px 70px rgba(90,55,180,.14); }
+
+.planet-wrap { position:relative; width:min(40vw,480px); aspect-ratio:1; display:grid; place-items:center; animation:floatPlanet 8s ease-in-out infinite; }
+.planet { width:58%; aspect-ratio:1; border-radius:50%; position:relative; z-index:2;
+  background:radial-gradient(circle at 32% 28%, #b8a6ff 0%, #6d5bd0 25%, #2f285f 55%, #141423 77%, #0b0b12 100%);
+  box-shadow:inset -35px -26px 70px rgba(0,0,0,.58), 0 0 90px rgba(139,92,246,.28);
+}
+.planet::before { content:""; position:absolute; inset:8% 12%; border-radius:50%; background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.18),transparent 65%); filter:blur(10px); }
+.ring { position:absolute; width:100%; height:30%; border:2px solid rgba(196,181,253,.5); border-radius:50%; transform:rotate(-18deg); box-shadow:0 0 30px rgba(167,139,250,.14); }
+.ring.r2 { width:82%; height:24%; border-color:rgba(139,92,246,.2); transform:rotate(32deg); animation:orbitSpin 24s linear infinite; }
+
+@media (max-width: 900px) {
+  .section { min-height:auto; padding:100px 0 70px; }
+  .container-shell { width:min(100% - 28px,1180px); }
+  .planet-wrap { width:min(82vw,430px); margin:20px auto 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior:auto !important; animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
