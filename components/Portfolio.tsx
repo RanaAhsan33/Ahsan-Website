@@ -136,10 +136,10 @@ export default function Portfolio(){
 
     <section id="hero" className="section pt-28"><div className="container-shell grid items-center gap-8 lg:grid-cols-[1.12fr_.88fr]">
       <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.9}}>
-        <div className="section-label mb-5">CYBERSECURITY • PROJECT MANAGEMENT</div>
+        <div className="section-label mb-5">CYBERSECURITY</div>
         <div className="mb-2 text-xl text-white/55">Hello, I’m</div>
         <h1 className="font-[var(--font-syne)] text-[clamp(3.8rem,8vw,7.5rem)] font-bold leading-[.86] tracking-[-.06em]">AHSAN IQBAL <span className="text-violet-400">KHAN.</span></h1>
-        <p className="mt-6 text-xl text-white/80">Cybersecurity Analyst <span className="text-violet-400">|</span> Project Manager</p>
+        <p className="mt-6 text-xl text-white/80">Cybersecurity Analyst <span className="text-violet-400">|</span> </p>
         <p className="mt-5 max-w-2xl text-base leading-8 text-white/52">I work at the intersection of security, execution and communication — translating technical risk into structured action, coordinating delivery, and building security-aware workflows that teams can actually use.</p>
         <div className="mt-6 flex flex-wrap gap-2"><Pill><BadgeCheck className="mr-1 inline" size={13}/> CEH Certified</Pill><Pill><BadgeCheck className="mr-1 inline" size={13}/> CHFI Certified</Pill><Pill>Google Project Management</Pill></div>
         <div className="mt-8 flex flex-wrap gap-3"><a href="#projects" className="rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold shadow-[0_12px_40px_rgba(139,92,246,.25)]">View My Work</a><a href="#contact" className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/80 hover:border-violet-400/40">Let’s Work Together</a></div>
